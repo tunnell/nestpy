@@ -11,15 +11,14 @@ These are the Python bindings for the [NEST library](https://github.com/NESTColl
 
 You do *not* have to have NEST already installed to use this package.
 
-## Installing from PyPI
+## Note from Xin:
+This package is forked from [nestpy](https://github.com/NESTCollaboration/nestpy) and updated to LUX Run3 Detector template. In addition,  two functions are added to `testNEST.cpp`. 
+1. runNEST() --- A function that takes in an energy and a position as the inputs, and output (S1, S2) observables
+2. runNEST_vec() --- A vectorized function that takes in a list of energies and positions as the inputs, and outputs a list of s1, s2 variables. 
 
-For 64-bit Linux or Mac systems, instally 'nestpy' should just require running:
+Additionally, all NEST built-in spectrum are binded as well. User has direct access to the various spectra.
 
-```
-pip install nestpy
-```
-
-You can then test that it works by running the example above.
+Please see `example/demo_v0.ipynb` for the usage.
 
 ## Installing from source
 
@@ -28,10 +27,11 @@ Requirements: You must have CMake>=2.8.12 and a C++11 compatible compiler (GCC>=
 First, you must check out this repository then simply run the installer:
 
 ```
-git checkout https://github.com/NESTCollaboration/nestpy
+git clone https://github.com/xxiang4/nestpy.git
 cd nestpy
 python setup.py install
 ```
+
 
 ## Usage
 
